@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -19,5 +21,13 @@ public interface ProductRepo extends JpaRepository<Product, UUID> {
 //    @Query(value = "select Product from Product where Product.title = :title", nativeQuery = false)
 //    Product findByTitle2(String title);
 
+    @Override
+    Optional<Product> findById(UUID uuid );
+
+    @Override
+    Product save(Product product);
+
+    @Override
+    List<Product> findAll();
 
 }

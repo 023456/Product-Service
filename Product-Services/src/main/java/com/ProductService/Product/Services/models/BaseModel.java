@@ -9,7 +9,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @MappedSuperclass
-public abstract class BaseModel {
+public  class BaseModel {
     @Id
     @GeneratedValue(generator = "uuidgenerator")
     @GenericGenerator(name ="uuidgenerator", strategy = "uuid2")

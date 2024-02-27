@@ -16,12 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @SpringBootApplication
+@EnableAsync
 public class ProductServicesApplication implements CommandLineRunner {
 
 //	private MentorRepository mentorRepository;
@@ -85,30 +87,56 @@ public class ProductServicesApplication implements CommandLineRunner {
 //		mentor.setId(5L);
 //		mentorRepository.save(mentor);
 
-		Category category = new Category();
-		category.setName("electronics");
-		Category savedCategory= categoryRepo.save(category);
+//		Category category = new Category();
+//		category.setName("Electronics");
+//		Category savedCategory= categoryRepo.save(category);
+//
+//		Category category1 = new Category();
+//		category1.setName("Clothing");
+//		Category savedCategory1= categoryRepo.save(category1);
+//
+//		Price price = new Price(129000.0  ,"INR");
+//		Price savedprice = priceRepo.save(price);
+//		Price price1 = new Price(80000.0  ,"INR");
+//		Price savedprice1 = priceRepo.save(price1);
+//
+//		Product product = new Product();
+//		product.setTitle("iPhone4");
+//		product.setImage("image url");
+//		product.setDescription("Best phone ever");
+//		product.setCategory(savedCategory);
+//		product.setPrice(savedprice);
+//		productRepo.save(product);
+//
+//
+//		Product product1 = new Product();
+//		product1.setTitle("woman wear");
+//		product1.setImage("image url");
+//		product1.setDescription("Best dres");
+//		product1.setCategory(savedCategory1);
+//		product1.setPrice(savedprice1);
+//		productRepo.save(product1);
 
-		Product product = new Product();
-		Price price = new Price(99.0 ,"INR");
-		Price savedprice = priceRepo.save(price);
 
-		product.setTitle("iPhone4");
-		product.setImage("image url");
-		product.setDescription("Best phone ever");
-		product.setCategory(savedCategory);
-//		product.setPrice(1000);
-		product.setPrice(savedprice);
-	    productRepo.save(product);
-//		Product product1 = productRepo.findByTitle("iPhone4");
-//		Product product1 = productRepo.findByTitleAndPrice_currency("iPhone4", )
-		System.out.println("DEBUG");
-//		System.out.println(product1);
 
-		Orders order = new Orders();
-		List<Product> products = productRepo.findAll();
-			order.setProductList(products);
-		Orders savedOrder = orderRepo.save(order);
+////		product.setPrice(1000);
+
+
+////		Product product1 = productRepo.findByTitle("iPhone4");
+////		Product product1 = productRepo.findByTitleAndPrice_currency("iPhone4", )
+//		System.out.println("DEBUG");
+////		System.out.println(product1);
+//		product.setTitle("iPhone3");
+//		product.setImage("image url");
+//		product.setDescription("Best phone ever");
+//		product.setCategory(savedCategory);
+//		product.setPrice(savedprice);
+//		productRepo.save(product);
+
+//		Orders order = new Orders();
+//		List<Product> products = productRepo.findAll();
+//			order.setProductList(products);
+//		Orders savedOrder = orderRepo.save(order);
 
 
 //		Optional<Category> categoryOptional = categoryRepo.findById(UUID.fromString("9cd36deb-c96c-46c4-9ab1-88ed189a911b"));
@@ -122,5 +150,11 @@ public class ProductServicesApplication implements CommandLineRunner {
 //		productRepo.deleteById(UUID.fromString("f04f00a8-a21b-4a46-8989-d5129865946c"));
 
 
+//		Optional<Category> categoryOptional = categoryRepo.findById(UUID.fromString("27c3ba8d-f413-4c45-bcc1-aea4d06ec42e"));
+//
+//		Category category1 = categoryOptional.get();
+//		 System.out.println(category1);
+//         List<Product> products = category1.getProductList();
+//		 System.out.println(products);
 	}
 }
