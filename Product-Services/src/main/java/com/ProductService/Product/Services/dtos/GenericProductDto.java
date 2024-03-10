@@ -6,13 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GenericProductDto {
+public class GenericProductDto implements Serializable {
     private String title;
     private String description;
     private String image;
@@ -22,15 +23,15 @@ public class GenericProductDto {
     private int inventoryCount;
 
     // Constructor to create GenericProductRequestDto from Product
-    public GenericProductDto(Product product) {
-
-        this.title = product.getTitle();
-        this.description = product.getDescription();
-        this.image = product.getImage();
-        this.category = new CategoryDto(product.getCategory());
-        this.priceValue = product.getPrice().getPrice();
-        this.priceCurrency = product.getPrice().getCurrency();
-        this.inventoryCount = product.getInventoryCount();
-    }
+//    public GenericProductDto(Product product) {
+//
+//        this.title = product.getTitle();
+//        this.description = product.getDescription();
+//        this.image = product.getImage();
+//        this.category = new CategoryDto(product.getCategory());
+//        this.priceValue = product.getPrice().getPrice();
+//        this.priceCurrency = product.getPrice().getCurrency();
+//        this.inventoryCount = product.getInventoryCount();
+//    }
 }
 
